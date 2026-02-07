@@ -2,8 +2,12 @@
 //2. The variables in the array are ordered and indexed starting from 0.
 //3. The size of arrey cannot chande once it is decleread
 
-//importing packeg because we cant print arrey directly it gives hashcode
+// This is a Array class "java.util is a packeg" & ".Array is a class"
+//it use for copying,sorting,filling data,searching in array etc
 import java.util.Arrays;
+/*importing packeg because we cant print arrey directly it gives hashcode
+it have a method "tostring()" which convert primitive type array into String  
+*/
 
 
 // creating a class for Array decleration
@@ -138,11 +142,181 @@ for(int i=0; i < intArray.length; i++){
         System.out.println("i: " + i + ", j: " + j+" = "+ intArray[i][j]);
     }
 }
-
+System.out.println("\n");
     }
+}
 
+//Inserting Elements Into an Array
+class insertion{
+    //Creating a arrey
+    int[] array={1,3,5,9};
+    int index=3; // index where i want to insert element
+    int element=7; // element whic i want to insert
+
+    //creatnig new arrey for more size
+int[] newArray= new int[array.length+1];
+    insertion(){
+    
+    //This loop will copy elements from "array to newArray"
+        for(int i=0;i<index;i++)
+            {
+            newArray[i]=array[i];
+        }
+   //inserting element at index
+         newArray[index]=element;
+  //loop for copy remaining elements from "array"
+      for(int i=index; i<array.length; i++) 
+ 
+        {
+            newArray[i+1]=array[i];
+/*
+  i<array.length because the we are copying array to newArray and 
+  here array size is 4 & newarray size is 5 . we have to copy only 4 element 
+  but if we use i<newArray.length then the loop will run 5 times but "array" size is four
+  so it will give exception because we are trying to access element wwhich is not present in array  
+*/
+}
+}
+}
+
+
+//Removing Elements From an Array
+class remove{
+    //create an array
+    int[] array={2,4,3,6,8};
+    int index=2; //index of element that we want ot remove
+    
+    int[] newarray=new int[array.length-1];
+    //constructer
+    remove(){
+
+        //this loop will copy elements from "array to newarray"
+for(int i=0; i<index;i++){
+    newarray[i]=array[i];
+}
+
+    //this loop will start from index and it will change the value to its next element  
+        for(int i=index; i<array.length-1; i++){
+              newarray[i]=array[i+1];
+                   }
+}  
+}
+
+
+//Min and Max Value in Arrays
+class minMax{
+    // crating array
+    int[] array={16,7,23,11,9};
+    int min=array[0];
+    int max=array[0];
+    //MIN
+    minMax(){
+    //loop for finding min
+        for(int i=0; i<array.length;i++){
+         //condtion
+         if(array[i]< min){
+            min=array[i];
+         }
+    }   
+    
+    //loop for finding max
+    for(int i=0; i<array.length;i++){
+        if(array[i]>max){
+            max=array[i];
+        }
+    }
+}
+}
+
+
+//Copying Arrays
+class copy{
+    //creating array with value
+    int[] array={1,3,5,7};
+    int[] newArray1=new int[array.length];
+
+    //Copying an Array by Iterating the Array
+    void iteration(){
+    for(int i=0; i<array.length; i++)
+        {
+          newArray1[i]=array[i];      
+    }
+System.out.println("coped array by iteration:-"+Arrays.toString(newArray1)+"\n");
+}
+
+//Copying an Array Using Arrays.copyOf()
+int[] newArray2=new int[array.length];
+
+void copyOf(){
+    newArray2=Arrays.copyOf(array,newArray2.length);
+    /*
+    The Arrays.copyOf() method takes 2 parameters. 
+    The first parameter is the array to copy. 
+    The second parameter is the length of the new array
+     */
+    System.out.println("coped array by copyOf:-"+Arrays.toString(newArray2)+"\n");
+}
+
+//Copying an Array Using Arrays.copyOfRange()
+int[] newArray3=new int[array.length];
+
+void copyOfRange(){
+    newArray3=Arrays.copyOfRange(array,0,array.length);
+/*
+ Arrays.copyOfRange() method takes 3 parameters. 
+ first parameter is the array to copy. 
+ second parameter is the first index in the source array to include in the copy. 
+ third parameter is the last index in the source array to include in the copy
+*/
+System.out.println("copide array by copyOfrange:-"+Arrays.toString(newArray3)+"\n");
+}
+
+//Copying an Array Using System.arraycopy(source, 0, dest, 0, source.length);
+int[] newArray4=new int[array.length];
+
+void systemArrayCopy(){
+    System.arraycopy(array, 0, newArray4, 0, array.length);
+    /*
+    "array" is thr array we want ot copy
+    "0" is the starting index of "array"
+    "newArray4" is ate array wehre we want to copy the elenments
+    "0" is a starting index of "newArray4"
+    "array.length" is the NO of elements to copy from "array"
+    */
+    System.out.println("copied array by system.arraycopy:-"+Arrays.toString(newArray4)+"\n");
+}
+}
+
+
+//Sorting Arrays using Arrays.sort() method
+class sorting{
+//creating a array with elements
+int[] array={2,5,3,7,1,4,6};
+
+void sorting1(){
+    Arrays.sort(array);
+    System.out.println("sorted array:-"+ Arrays.toString(array)+"\n");
+}
 
 }
+
+
+//Checking if Arrays are Equal with Arrays.equals()
+class equal{
+
+int[] ints1 = {0,2,4,6,8,10};
+int[] ints2 = {0,2,4,6,8,10};
+int[] ints3 = {10,8,6,4,2,0};
+
+boolean ints1EqualsInts2 = Arrays.equals(ints1, ints2);
+boolean ints1EqualsInts3 = Arrays.equals(ints1, ints3);
+
+void equal1(){
+System.out.println("ints1 is equal to ints2:-"+ints1EqualsInts2);
+System.out.println("ints1 is equal to ints3:-"+ints1EqualsInts3);
+}
+}
+
 
 public class Array {
     public static void main(String[] args) {
@@ -151,7 +325,14 @@ public class Array {
         literal obj2= new literal();
         access obj3=new access();
         multiDimenshion obj4=new multiDimenshion();
+        insertion obj5=new insertion();
+        remove obj6=new remove();
+        minMax obj7=new minMax();
+        copy obj8=new copy();
+        sorting obj9=new sorting();
+        equal obj10=new equal();
 
+        
         //ArrayDecleartion
         System.out.println("Arrey:- "+obj1.Integer_Arrey); 
         // it will give hashcode
@@ -169,7 +350,27 @@ obj3.loop3();
 //multiDimenshion arrrey
 obj4.MDloop();
 obj4.MDloop1();
+
+//insertion
+System.out.println("Array:-"+Arrays.toString(obj5.array)+" Array after insertion:-"+Arrays.toString(obj5.newArray));
  
- 
+// Removing element
+System.out.println("Array:-"+Arrays.toString(obj6.array)+" Array after removing an element:-"+Arrays.toString(obj6.newarray)+"\n");
+
+//Min & Max
+System.out.println("Array:-"+Arrays.toString(obj7.array)+"\n");
+System.out.println("Max value:-"+obj7.max+"\t"+"Min value:-"+obj7.min+"\n");
+
+//copying array by loop
+obj8.iteration();
+obj8.copyOf();
+obj8.copyOfRange();
+obj8.systemArrayCopy();
+
+//Sorting array
+obj9.sorting1();
+
+//chake array is match or not
+obj10.equal1();
 }
 }
