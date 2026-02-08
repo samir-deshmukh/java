@@ -38,7 +38,7 @@ class literal{
      If you already know what values to insert into the array
      you can use an array literal
     */
-   int[] arre1=new int[]{1,2,3,4,5}; 
+   int[] arre1=new int[]{1,2,3,4,5}; // OR  int[] arre1={1,2,3,4,5};
    // if i try to declear size of arrey it will give error
 /*
  java allow
@@ -79,7 +79,7 @@ class access{
         String[] stringArray = new String[10]; //string with defined size but no elements
 
 for(int i=0; i < stringArray.length; i++) {
- //Yhis loop will assign a ("String no "+i) value to each element
+ //his loop will assign a ("String no "+i) value to each element
     stringArray[i] = "String no " + i;
 }
 //this loop will print all elements in loop
@@ -313,8 +313,77 @@ boolean ints1EqualsInts3 = Arrays.equals(ints1, ints3);
 
 void equal1(){
 System.out.println("ints1 is equal to ints2:-"+ints1EqualsInts2);
-System.out.println("ints1 is equal to ints3:-"+ints1EqualsInts3);
+System.out.println("ints1 is equal to ints3:-"+ints1EqualsInts3+"\n");
 }
+}
+
+
+//Filling Arrays With Arrays.fill()
+class fillArray{
+    int[] array=new int[7];
+
+   void fill(){
+    Arrays.fill(array, 7);
+/*
+in this syntax, "array" is the array we want to fill, 
+and "7" is the value we want to fill the array with.
+*/
+    System.out.println("Filled array:- "+Arrays.toString(array)+"\n");
+
+}
+
+//filling in part of array
+void fill1(){
+Arrays.fill(array,3,5,13);
+/*
+in this syntax "array" is the array we want to fill,
+and "3" is the index from their the given value will be filled 
+& "6" it is the last index where filling value will stop 
+(3,4,5)
+last is a value that we are filling  
+*/
+System.out.println("Array filling in part:-"+Arrays.toString(array)+"\n");
+}
+}
+
+
+//Searching Arrays with Arrays.binarySearch()
+/*
+   If more than one element exists in the array with the searched value, 
+   there is no guarantee about which element will be found.
+*/
+class binarySearch{
+     int[] array={0,2,4,6,8};
+     
+    int index1=Arrays.binarySearch(array,6);
+   // "6" it is a value we are finding 
+
+   int index2 = Arrays.binarySearch(array, 0, 4, 2);
+   // it find last value "2" in array betweel the range of "0"-"4(without 4 it will be 3)"
+
+   int index3 = Arrays.binarySearch(array, 7);
+/*
+    7 is not in a array then The number 7 should have been inserted into the array 
+    at index 4, if 7 was to be inserted into the array (and the sort order kept).
+    Therefore binarySearch() returns -4 - 1 = -5 .
+ */
+   
+   int index4 = Arrays.binarySearch(array, 12);
+   /*
+1. If all elements in the array are smaller than the sought value, 
+   then binarySearch() will return - length of the array - 1.
+2. In this example we search for 12 in the array, 
+   but all elements in the array are smaller than 12. 
+   ""Therefore binarySearch() will return -length (-5) - 1 = -5 -1 = -6.""
+   */
+
+    void index1(){
+        System.out.println("The value index No:- "+index1+"\n"); //3
+        System.out.println("The value index No:- "+index2+"\n"); //1
+        System.out.println("The value index No:- "+index3+"\n"); //-5
+         System.out.println("The value index No:- "+index4+"\n"); //-6
+    }
+
 }
 
 
@@ -331,13 +400,16 @@ public class Array {
         copy obj8=new copy();
         sorting obj9=new sorting();
         equal obj10=new equal();
+        fillArray obj11=new fillArray();
+        binarySearch obj12=new binarySearch();
 
         
-        //ArrayDecleartion
-        System.out.println("Arrey:- "+obj1.Integer_Arrey); 
-        // it will give hashcode
-System.out.println("Arrey:- "+Arrays.toString(obj1.Integer_Arrey)+"\n"); // using arrey packeg Arrays.toString()
-        //output = {0,0,0,0,0} because default value
+//ArrayDecleartion
+    System.out.println("Arrey:- "+obj1.Integer_Arrey); 
+// it will give hashcode
+    System.out.println("Arrey:- "+Arrays.toString(obj1.Integer_Arrey)+"\n"); 
+    // using arrey packeg Arrays.toString()
+    //output = {0,0,0,0,0} because default value
 
 //literal
  System.out.println("Arrey:- "+Arrays.toString(obj2.arre1)); 
@@ -370,7 +442,15 @@ obj8.systemArrayCopy();
 //Sorting array
 obj9.sorting1();
 
-//chake array is match or not
+//check array is match or not
 obj10.equal1();
+
+//Filling array
+obj11.fill();
+obj11.fill1();
+
+//binarySearch
+obj12.index1();
+
 }
 }
