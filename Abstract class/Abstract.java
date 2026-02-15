@@ -28,7 +28,7 @@ public class Abstract{
     
         //We ""can't create object"" of abstract class but """can create instance"""
         //car obj=new car(); //error
-Car obj=new Thar();
+Car obj=new Thar(); //this is upcasting 
 obj.fly();
 obj.drive();
 
