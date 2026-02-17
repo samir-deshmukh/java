@@ -202,6 +202,75 @@ Class method  >  Most specific interface  >  You must override
 
 
 
+//Interface and Polymorphism
+//Runirme polymorphism
+interface Animal{
+    void sound();
+}
+
+class Dog implements Animal{
+    public void sound(){
+        System.out.println("Bark");
+    }
+}
+
+class Cat implements Animal{
+    public void sound(){
+        System.out.println("Meow");
+    }
+}
+
+
+
+//Generic Interfaces:- using this we can pass value/paremeter of any type
+//It is use for reduce duplication of code,To achieve type safety, 
+// To avoid type casting,To write reusable and scalable code
+
+//Ex simple generic interface
+ interface Generic<T> {
+ void set(T value);
+T get();    
+}
+
+class Box<T> implements Generic<T>{
+private T value;
+
+public void set(T value){
+this.value= value;
+}
+
+public T get(){
+    return value;
+}
+
+}
+
+//Ex generic interface with multipel type
+interface Generic_Multi<N,A>{
+N getName();
+A getAge();
+} 
+
+class Box1<N,A> implements Generic_Multi<N,A>{
+private N Name;
+private A age;
+
+public void Set(N Name,A age){
+this.Name=Name;
+this.age=age;
+}
+
+public N getName() {
+    return Name;
+}
+
+public A getAge(){
+    return age;
+} 
+
+}
+
+
 
 //Main class
 public class Itf{
@@ -238,5 +307,36 @@ obj4.method();
 //Class Inheritance + Interface Default
 Demo obj5=new Demo();
 obj5.method();
+
+
+//interface + Polymorphism
+Animal a;
+a=new Dog();
+a.sound();
+
+a= new Cat();
+a.sound();
+
+
+//Generic Interfaces
+
+//passing integer
+Box<Integer> BoxObj= new Box<>();
+BoxObj.set(7);
+System.out.println("Integer:-"+BoxObj.get());//Integer:-7
+
+//Passing String
+Box<String> stringObj=new Box<>();
+stringObj.set("Hello!");
+System.out.println("Stirng:-"+stringObj.get()); //String:-Hello!
+
+//generic interface with multipel type
+Box1<String,Integer> Boxobj=new Box1<>();
+Boxobj.Set("Samir",19);
+System.out.println("NAme:- "+Boxobj.getName()+"\n"+"Age:- "+Boxobj.getAge());
+
+
+
+
 }
 }
