@@ -28,5 +28,9 @@ public class Main_Anno {
 
     Deprecated_Annotations D=new Deprecated_Annotations();
     D.old_method();//It only give warning nothing else
+
+
+
+
 }
 }
