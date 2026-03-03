@@ -12,8 +12,7 @@ import java.lang.Math;
     // Basic operators +,-,*,\,%
 
     //deckearing variables
-    int A=7;
-    int B=13;
+    int A=7,B=13;
     //performing operations
     int add=A+B;
     //int add1= A+=B; //A+=B   :-  A=A+B
