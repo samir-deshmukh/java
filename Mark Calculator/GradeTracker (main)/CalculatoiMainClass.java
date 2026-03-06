@@ -9,7 +9,5 @@ ad.InputRollNo();
 ad.InputSubMark();
 
 mc.percentage();
-
-
     }
 }
