@@ -11,6 +11,7 @@ StudentInfo info=new StudentInfo();
 String name;
 int RollNo; 
 int Math,Biology,Chemistry,Physic;
+int complete=0;
 
 //Method to take input
 
@@ -31,7 +32,7 @@ public void InputRollNo(){
     info.r++;
     } catch(InputMismatchException e) {
         System.out.println("Invalid Roll No");
-        sc.nextLine();
+    sc.nextLine();
     }   
 } 
 
