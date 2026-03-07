@@ -2,7 +2,6 @@
 //import java.util.Scanner;
 
 public class StudentInfo{
-
 //Array to store inputes
 //this will store 50 students info
 
@@ -20,5 +19,4 @@ int[] MathMark=new int[50];
 int[] BiologyMark=new int[50];
 int[] ChemistryMark=new int[50];
 int[] PhysicMark=new int[50];
-
 }

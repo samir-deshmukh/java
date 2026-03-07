@@ -7,12 +7,10 @@ public class MarkCalculator {
     }
 
 //percentage calculating method
-
 public void percentage(){
     int i=ad.complete;
 int totalMarks=ad.info.MathMark[i]+ad.info.BiologyMark[i]+ad.info.ChemistryMark[i]+ad.info.PhysicMark[i];
 double percent= (totalMarks/400.0)*100;
-
 System.out.println("Percentage:- "+percent+"\n");
 
 //Grade

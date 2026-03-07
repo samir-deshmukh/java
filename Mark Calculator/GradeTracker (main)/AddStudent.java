@@ -14,7 +14,6 @@ int Math,Biology,Chemistry,Physic;
 int complete=0;
 
 //Method to take input
-
 public void InputName(){
     System.out.print("Enter Name:- ");
     name=sc.nextLine();  
@@ -22,7 +21,6 @@ public void InputName(){
     info.n++;
     }
    
-
 public void InputRollNo(){
     try{
     System.out.print("Enter Roll No:- ");
