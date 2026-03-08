@@ -1,6 +1,5 @@
 public class MarkCalculator {
  AddStudent ad; // received from main, not created here
-
 // Constructor - accepts the same AddStudent object used in main
     public MarkCalculator(AddStudent ad) {
         this.ad = ad;

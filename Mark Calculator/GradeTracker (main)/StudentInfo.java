@@ -1,6 +1,5 @@
 //It contain Student name,Roll No,,marks
 //import java.util.Scanner;
-
 public class StudentInfo{
 //Array to store inputes
 //this will store 50 students info

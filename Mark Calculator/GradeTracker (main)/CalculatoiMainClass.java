@@ -7,7 +7,6 @@ public static void main(String[] args){
 ad.InputName();
 ad.InputRollNo();
 ad.InputSubMark();
-
 mc.percentage();
     }
 }
