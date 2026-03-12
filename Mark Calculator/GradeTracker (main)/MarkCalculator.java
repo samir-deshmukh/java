@@ -1,10 +1,8 @@
 public class MarkCalculator {
  AddStudent ad; // received from main, not created here
 // Constructor - accepts the same AddStudent object used in main
-    public MarkCalculator(AddStudent ad)
-     {
-        this.ad = ad;
-    }
+    public MarkCalculator(AddStudent ad){ this.ad = ad;}
+    
 
 //percentage calculating method
 public void percentage(){
